@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import ProductList from './ProductList'
 import CategoryNavigation from './CategoryNavigation'
+import CartSummary from './CartSummary'
+
 
 export default class Shop extends Component {
     render() {
-
         return (
             <div className="container-fluid">
                 <div className="row mb-2">
@@ -12,6 +13,7 @@ export default class Shop extends Component {
                     <div className="navbar-brand">
                       Sport Store
                     </div>
+                    <CartSummary { ...this.props } />
                   </div>
                 </div>
                 <div className="row">
@@ -19,7 +21,7 @@ export default class Shop extends Component {
                     <CategoryNavigation baseUrl='/shop/products' categories={this.props.categories} />
                   </div>
                   <div className="col-9 text-dark p-2">
-                    <ProductList products={this.props.products} />
+                    <ProductList { ...this.props } />
                   </div>
                 </div>
             </div>

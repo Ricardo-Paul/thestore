@@ -1,14 +1,14 @@
 import { ActionTypes } from "./Types";
 
-export const ShopReducer = (storedata, action) => {
+export const ShopReducer = (anything, action) => {
     switch(action.type){
         case ActionTypes.DATA_LOAD:
             return {
-                ...storedata,
+                ...anything,
                 [action.payload.dataType]: action.payload.data
             };
         default:
-            return storedata || {};
+            return anything || {};
     }
 }
 
